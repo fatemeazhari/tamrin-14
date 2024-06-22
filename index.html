@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .preloader{
+       background-color: red;
+       position: fixed;
+        top: 0;
+        left: 0;
+        display: flex;
+        width: 100%;
+        height: 50%;
+        justify-content: center;
+        align-items: center;
+        animation-name: go-down;
+        animation-duration: 0.5s;
+        animation-fill-mode: forwards;
+        animation-delay: 1s;
+    }
+    .preloader span{
+        background-color: white;
+        display: inline-block;
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        animation-name: rt1;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+
+    }
+    @keyframes rt1{
+        from{transform: rotate(0deg);}
+        to{
+            transform: rotate(180deg);
+        }
+    }
+    @keyframes go-down{
+        from{
+            top: 0;
+        }
+        to{
+            top: 100%;
+        }
+    }
+    .pageination{
+        border: 1px solid blue;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+    }
+    .pageination a{
+        text-decoration: none;
+        font-family: 'Courier New', Courier, monospace;
+        padding: 0 5px;
+        display: inline-block;
+        margin: 0 2px;
+        border-radius: 4px;
+        color: lightslategray;
+
+    }
+    .pageination a.active{
+        background-color: lightblue;
+    }
+    .pageination a:not(active):hover{
+        background-color: rgb(145, 72, 72);
+        color: rgb(240, 226, 226);
+    }
+    .pageination a:first-child{
+        position: relative;
+        left: 0;
+    }
+    .pageination a:first-child:hover{
+        left: -2px;
+        background-color: red;
+    }
+    .pageination a:last-child:hover{
+        left: 4px;
+    }
+
+</style>
+<body>
+     <div class="pageination">
+        <a href="#">&laquo;</a>
+        <a href="#">1</a>
+        <a href="#" class="active">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#">5</a>
+        <a href="#">6</a>
+        <a href="#">&raquo;</a>
+    </div>
+    <div class="preloader">
+        <span>
+            Fateme
+        </span>
+    </div>
+   
+   
+</body>
+</html>
